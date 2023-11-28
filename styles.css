@@ -56,14 +56,6 @@ body {
     margin-top: 2.5em;
 }
 
-@media (max-width: 70em) {
-    .blockquote {
-        font-size: 1.5em;
-        align-self: flex-start;
-        margin-top: 4em;
-    }
-}
-
 @keyframes gradientmove {
     0%   {background-position: 0% 0%}
     50%  {background-position: 100% 100%}
