@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "Playfair Display";
+    src: url('assets/fonts/PlayfairDisplay-Bold.ttf');
+}
+
+@font-face {
+    font-family: "Josefin Sans";
+    src: url('assets/fonts/JosefinSans-Light.ttf');
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.95)), url('assets/images/nejc-soklic-t7jnSSpS3no-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.blockquote {
+    height: 40%;
+    text-align: center;
+}
+
+.blockquote h1 {
+    color: #faede3;
+    font-family: "Playfair Display", serif;
+    font-size: 3em;
+}
+
+.blockquote span {
+    color: transparent;
+    background: linear-gradient(69deg, #ee0979, #ff6a00, #ee0979);
+    background-size: 400%;
+    background-clip: text;
+    animation: gradientmove 30s ease infinite;
+}
+
+.blockquote p {
+    color: transparent;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.2em;
+    word-spacing: 0.2em;
+    background: linear-gradient(69deg, #ee0979, #ff6a00, #ee0979);
+    background-size: 400%;
+    background-clip: text;
+    text-transform: uppercase;
+    margin-top: 3em;
+}
+
+@keyframes gradientmove {
+    0%   {background-position: 0% 0%}
+    50%  {background-position: 100% 100%}
+    100% {background-position: 0% 0%}
+}
