@@ -1,0 +1,11 @@
+/* -=[: Global Fonts :]=- */
+
+@font-face {
+    font-family: "Playfair Display";
+    src: url('../fonts/PlayfairDisplay-Bold.ttf');
+}
+
+@font-face {
+    font-family: "Josefin Sans";
+    src: url('../fonts/JosefinSans-Light.ttf');
+}

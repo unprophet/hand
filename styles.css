@@ -1,27 +1,18 @@
-@font-face {
-    font-family: "Playfair Display";
-    src: url('assets/fonts/PlayfairDisplay-Bold.ttf');
-}
+/* -=[: Imports :]=- */
+@import url('assets/styles/variables.css');
+@import url('assets/styles/fonts.css');
+@import url('assets/styles/animations.css');
 
-@font-face {
-    font-family: "Josefin Sans";
-    src: url('assets/fonts/JosefinSans-Light.ttf');
-}
-
-:root {
-    --soft-white: #faede3;
-    --soft-wax: #c0392b;
-    --moonshadow: #8e44ad;
-}
+/* -=[: Base Styling :]=- */
 
 html, body {
     height: 100%;
-    width: 100%;
 }
 
 body {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 1)), url('assets/images/nathan-anderson-L95xDkSSuWw-unsplash.jpg');
+    background-image: linear-gradient(to top, rgb(0 0 0 / 0.35) 15%, rgb(0 0 0 / 1) 95%), url('assets/images/nathan-anderson-L95xDkSSuWw-unsplash.jpg');
     background-size: cover;
+    background-position: bottom;
     background-repeat: no-repeat;
     overflow: hidden;
     
@@ -30,11 +21,18 @@ body {
     align-items: center;
 }
 
+/* -=[: Blockquotes :]=- */
+
+/* -=[: Blockquote Title Styling :]=- */
+
 .bq-title {
     margin: 0;
     margin-top: -12vh;
+    margin-inline: 0;
     width: 90%;
     min-width: 20em;
+    
+    opacity: 0.9;
     
     text-align: center;
     quotes: "“" "”" "‘" "’";
@@ -43,41 +41,46 @@ body {
 .bq-title p {
     margin: 0;
     
-    color: var(--soft-white);
+    color: var(--color-soft-white);
     font-family: "Playfair Display", serif;
     font-size: 4em;
+    
+    opacity: 0;
+    animation: bq-title-appear 1.5s 0.2s ease forwards;
 }
 
 .bq-title p::before,
 .bq-title p::after {
     position: absolute;
-    margin-top: 0.05em;
+    margin-top: -0.19em;
+    font-size: 1.5em;
     
-    transform: scale(1.5);
+    opacity: 0;
+    animation: bq-title-appear 1.3s ease forwards;
 }
 
 .bq-title p::before {
-    margin-left: -0.525em;
+    margin-left: -0.44em;
     content: open-quote;
 }
 
 .bq-title p::after {
-    margin-left: 0.025em;
+    margin-left: -0.04em;
     content: close-quote;
 }
 
-.bq-title span {
+.bq-title p span {
     color: transparent;
     
-    background: linear-gradient(45deg, var(--soft-wax), var(--moonshadow), var(--soft-wax));
+    background: linear-gradient(45deg, var(--color-soft-wax), var(--color-moonshadow), var(--color-soft-wax));
     background-size: 400%;
     background-clip: text;
     
-    animation: gradient-glow 30s ease infinite;
+    animation: bq-title-gradient-glow 15s ease infinite alternate;
 }
 
 .bq-title .reverse {
-    background: linear-gradient(45deg, var(--moonshadow), var(--soft-wax), var(--moonshadow));
+    background: linear-gradient(45deg, var(--color-moonshadow), var(--color-soft-wax), var(--color-moonshadow));
     background-size: 400%;
     background-clip: text;
 }
@@ -90,22 +93,20 @@ body {
     font-size: 1.3em;
     word-spacing: 0.2em;
     
-    background: linear-gradient(45deg, var(--soft-wax), var(--moonshadow), var(--soft-wax));
+    background: linear-gradient(45deg, var(--color-soft-wax), var(--color-moonshadow), var(--color-soft-wax));
     background-size: 400%;
     background-clip: text;
     
     text-transform: uppercase;
-    animation: gradient-glow 30s ease infinite;
+    
+    opacity: 0;
+    animation:
+        bq-title-appear 1.2s 1.5s ease forwards,
+        bq-title-gradient-glow 30s ease infinite alternate;
 }
 
 .bq-title footer span {
-    color: var(--soft-white);
-}
-
-@keyframes gradient-glow {
-      0% {background-position:   0%   0%}
-     50% {background-position: 100% 100%}
-    100% {background-position:   0%   0%}
+    color: var(--color-soft-white);
 }
 
 @media screen and (max-width: 80em) {
